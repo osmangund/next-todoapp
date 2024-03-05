@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-
-    basePath: "/next-todoapp",
+  basePath: "/next-todoapp",
   images: {
     unoptimized: true,
   },
