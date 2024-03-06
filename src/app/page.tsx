@@ -26,7 +26,14 @@ export default async function Home() {
   const todos = await getTodos()
 
   const groupedTodos = todos.reduce((groups, todo) => {
-    const date = new Date((todo.createdAt as Date).toString()).toDateString()
+    const date = new Date(
+      (todo.createdAt as Date).toString()
+    ).toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+    })
+
     if (!groups[date]) {
       groups[date] = []
     }
